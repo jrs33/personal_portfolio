@@ -4664,7 +4664,7 @@ input[type="submit"].btn.btn-mini {
   color: white;
   text-decoration: none;
   background-color: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #e74c3c;
 }
 
 .navbar .nav > .active > a:hover {
