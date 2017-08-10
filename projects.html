@@ -11,14 +11,14 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body style="background-color:#ecf0f1">
-    <nav class="navbar">
+    <nav class="navbar navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color:#95a5a6;">
             <span class="glyphicon glyphicon-menu-hamburger" style = "color:#e74c3c"></span>                     
           </button>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="myNavbar" style="margin-left:50px">
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -28,7 +28,19 @@
         </div>
       </div>
     </nav>
-    <div id="content"></div>
+    <header style="background-color:#e74c3c; margin-top:-40px;">
+        <div class="row"></div>
+        <h1 class="col-md-4 col-md-offset-1" style="color:#ecf0f1; margin-top: 80px;">Projects</h1>
+        <div class="row"></div>
+        <div class="row"></div>
+    </header>
+    <div class="container-fluid" style="background-color:#bdc3c7">
+        <div id="content" class="col-md-8 col-md-offset-1"></div>
+        <div class="col-md-3" style="margin-top:15px;">
+            <h3>Josh Surette</h3>
+            <span>A list containing my best projects with some brief explanations, and the tools I used. I invite you to check out my <a href="https://github.com/jrs33">source code</a> on my Github page.</span>
+        </div>
+    </div>
     <script src="https://fb.me/react-0.14.6.js"></script>
     <script src="https://fb.me/react-dom-0.14.6.js"></script>
     <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
@@ -36,54 +48,105 @@
 
     var DATA = [
         {    
-            name: 'EMR Standardization',
-            img: "Icons8-Windows-8-Database.ico",
-            langList: ['Spark', 'Hadoop', 'Scala']
+                name: 'EMR Standardization',
+                id: 1,
+                img: 'https://cdn-images-1.medium.com/max/1600/1*8-NNHZhRVb5EPHK5iin92Q.png',
+                description: 'For my Junior year summer internship I worked as a Data Engineering intern at Optum in Boston with the largest healthcare database in the country. We established a pipeline to take data from various EMR formats to convert them into a CDR format ready for sale. I was part of the core effort to transfer existing SQL ETL code to a more scalable Hadoop/Spark framework.',
+                langList: ['Spark', 'Hadoop', 'Scala', 'SQL']
         },
         {    
-            name: 'HackMIT ECG Diagnosis',
-            img: "MIT_Hacking-_Medicine_Logo_Black.png",
-            langList: ['Python', 'Pandas']
+                name: 'Metabolic Engineering',
+                id: 2,
+                img: 'macbookpro15-front_1_orig.png',
+                description: '',
+                langList: ['Python', 'Pandas', 'Scikit-learn']
+        },
+        {    
+                name: 'Third World ECG Diagnostic',
+                id: 2,
+                img: 'MIT_HACKING-_Medicine_Logo_Black.png',
+                description: 'In the MIT Hacking Medicine 2017 Hackathon, I worked with a team of physicians, economists and engineers to build an ECG to be used in third world countries. This ECG would be integrated into smartphones, which are very prevalent in these developing areas. I helped write the time compression, diagnostic classification algorithm in Python.',
+                langList: ['Python', 'Pandas', 'Scikit-learn']
         }
-    ]
+    ];
     
-    var App = React.createClass({
-        render: function(){
+    var ProjectPreview = React.createClass({
+        render(){
             return(
                 <div>
-                    <Profile
-                        name = {this.props.profileData.name}
-                        img = {this.props.profileData.img}/>
-                    <Hobbies 
-                        langList = {this.props.langList}/>
+                    <hr></hr>
+                    <Project 
+                        name={this.props.name}/>
+                    <Body
+                        desc={this.props.description}/>
+                    <ProjectImage
+                        img={this.props.img}/>
+                    <Languages 
+                        langs={this.props.langList}/>
+                    <hr></hr>
                 </div>
             );
         }
     });
 
-    var Profile = React.createClass({
-        render: function(){
+    var Project = React.createClass({
+        render(){
             return (
                 <div>
                     <h3>{this.props.name}</h3>
-                    <img src={this.props.img} />
+                </div>
+            );
+        }
+    });
+
+    var Body = React.createClass({
+        render(){
+            return (
+                <div>
+                    <span>{this.props.desc}</span>
+                </div>
+            );
+        }
+    });
+
+    var ProjectImage = React.createClass({
+        render(){
+            return(
+                <div style={{textAlign:"center"}}>
+                    <img src={this.props.img}></img>
                 </div>
             )
         }
     })
     
-    var Hobbies = React.createClass({
-        render: function(){
-            return (
+    var Languages = React.createClass({
+        render(){
+            return(
                 <div>
-                    <h5>My Hobbies:</h5>
+                    
+                    {this.props.langs.map(function(listValue){
+                        return <li>{<i>{listValue}</i>}</li>;
+                    })}
                     
                 </div>
             )
         }
+            
     })
 
-    ReactDOM.render(<App profileData={DATA}/>, document.getElementById('content'));
+    var Index = React.createClass({
+        render(){
+            return (
+                <div>
+                    {this.props.projectData.map(
+                        project => <div><ProjectPreview key={project.id} {...project}/></div>)
+                    }
+                </div>
+            );
+        }
+    });
+    
+    ReactDOM.render(<Index projectData={DATA}/>, document.getElementById('content'));
     
     </script>
 </body>
