@@ -264,6 +264,13 @@ a:focus {
           border-radius: 500px;
 }
 
+.circle
+  {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px; 
+  }
+
 .row {
 	position: static;
 	margin-right: -20px;
