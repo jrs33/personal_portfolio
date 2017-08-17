@@ -12,7 +12,7 @@ const projectData = [
     {    
             name: 'Metabolic Engineering',
             id: 2,
-            img: 'macbookpro15-front_1_orig.png',
+            img: 'src/img/macbookpro15-front_1_orig.png',
             description: 'In my sophomore year internship, I was fortunate enough to be able to have worked with some of the smartest people I have ever met at Massachussetts General Hospital as a Software Engineering Research Intern. Here, I worked with a Chemical Engineering postdoc and renowned surgeons to help write algorithms in Python to locate specific metabolic pathways affected in liver transplants. The ultimate goal of this would be to develop drugs that target these specific pathways to create more viable livers for transplant, while reducing side effects. Here, I gained a lot of experience with handling massive data sets, and grew much more accustomed to Python and all of the great data science tools it offers.',
             langList: ['Python', 'Pandas', 'MATLAB']
     },
@@ -26,21 +26,21 @@ const projectData = [
     {    
             name: 'OpenMRS Developer',
             id: 4,
-            img: 'openMRS.png',
+            img: 'src/img/openMRS.png',
             description: 'During the summer of 2017, I became an open source developer for a project called OpenMRS, which is a fantastic open source initiative dedicate to providing a medical record platform in developing countries. As a new developer, I mainly work on lower level tickets in Java and collaborate with engineers across the world to help provide a reliable health platform. I plan to collaborate for years to come, and look forward to one day leading sprints and working on high priority tickets as I learn more about the code base through my work.',
             langList: ['Java', 'JIRA', 'Git']
     },
     {    
             name: 'Third World ECG Diagnostic',
             id: 5,
-            img: 'MIT_HACKING-_Medicine_Logo_Black.png',
+            img: 'src/img/MIT.png',
             description: 'In the MIT Hacking Medicine 2017 Hackathon, I worked with a team of physicians, economists and engineers to build an ECG to be used in third world countries. This ECG would be integrated into smartphones, which are very prevalent in these developing areas. I helped write the time compression, diagnostic classification algorithm in Python with the help of scikit-learns extensive ML functionality.',
             langList: ['Python', 'Pandas', 'Scikit-learn', 'Git']
     },
     {    
             name: 'VeriRoute',
             id: 6,
-            img: 'laptop_PNG5895.png',
+            img: 'src/img/laptop_PNG5895.png',
             description: 'In Fall 2016, I participated in HackDartmouth in my first ever hackathon. Here, I found a great team and we were able to leverage one of the sponsors\' datasets on geospatial driver behavior to develop a web app that served as a Google Map extension. Along with a geospatial crime dataset, the app functioned by giving a metric of safety to each route calculated by the Google Map API to allow users to verify the safety of their routes. This was then packaged into a nice UI.',
             langList: ['HTML', 'CSS', 'Javascript']
     },
@@ -68,21 +68,21 @@ const projectData = [
     {    
             name: 'ClubConnect',
             id: 10,
-            img: 'androids.png',
+            img: 'src/img/androids.png',
             description: 'For a final project for my Software Engineering class I led a team in the development of an Android app called ClubConnect. The mission of this software was to replace the current product at BU used to connect students to clubs, and create a rudimentary social platform for students to connect with campus clubs. I wrote the back end in Java and set up Firebase and integrated this within our application as well.',
             langList: ['Java', 'Android Studio', 'Firebase']
     },
     {    
             name: 'MinerDash',
             id: 11,
-            img: 'mac-lcd-screen.png',
+            img: 'src/img/mac-lcd-screen.png',
             description: 'In a semester long project for my Software Engineering class, I wrote a comprehensive, Object-Oriented game entirely in C++. MinerDash is an ASCII-based game with the goal of moving miners to and from mines to obtain gold, while avoiding opponents who move sporadically throughout the environment.',
             langList: ['C++']
     },
     {    
             name: 'innovateEDU',
             id: 12,
-            img: 'innovate_clear.png',
+            img: 'src/img/innovate_clear.png',
             description: 'Starting over the summer of my sophomore year, myself and a group of 3 students from Northeastern, MIT and Emerson started a cross campus initiative called innovateEDU. The aim of this program was to connect students across campuses to get them working on high-risk projects with commercial potential, and ultimately connect these students and campuses into the many incubators and accelerators across Boston. In our inaugural semester, we were able to drive over 200 people to our final event, and are now doubling in size, and hope to continue to provide value for students interested in commercializing their ideas.',
             langList: ['null']
     }
