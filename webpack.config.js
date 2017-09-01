@@ -7,6 +7,11 @@ module.exports = {
     path: './src/static/js/',
     filename: 'bundle.js'       
   },
+  entry: './src/crowdsource.js',
+  output: {
+    path: './src/static/js/',
+    filename: 'crowd.js'       
+},
   module: {
     loaders: [
       {
